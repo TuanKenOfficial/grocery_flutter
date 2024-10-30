@@ -8,7 +8,7 @@ class RemotePopularCategoryService {
   Future<dynamic> get() async {
     var response = await client.get(
         Uri.parse(
-            '$remoteUrl?popular-categories?populate=category&populate=category.image&pagination[start]=0&pagination[limit]=5'
+            '$remoteUrl?popular-categories?populate=category&populate=category.image&pagination[start]=0&pagination[limit]=7'
         )
     );
     return response;

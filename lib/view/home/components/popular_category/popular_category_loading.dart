@@ -14,7 +14,7 @@ class PopularCategoryLoading extends StatelessWidget {
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           physics: const BouncingScrollPhysics(),
-          itemCount: 5,
+          itemCount: 7,
           itemBuilder: (context, index) => const PopularCategoryLoadingCard()),
     );
   }
