@@ -1,38 +1,41 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'category.dart';
+part of 'product.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class CategoryAdapter extends TypeAdapter<Category> {
+class ProductAdapter extends TypeAdapter<Product> {
   @override
-  final int typeId = 2;
+  final int typeId = 3;
 
   @override
-  Category read(BinaryReader reader) {
+  Product read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Category(
+    return Product(
       id: fields[0] as int,
       name: fields[1] as String,
-      image: fields[2] as String,
+      description: fields[2] as String,
+      images: (fields[3] as List).cast<String>(),
     );
   }
 
   @override
-  void write(BinaryWriter writer, Category obj) {
+  void write(BinaryWriter writer, Product obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
       ..write(obj.name)
       ..writeByte(2)
-      ..write(obj.image);
+      ..write(obj.description)
+      ..writeByte(3)
+      ..write(obj.images);
   }
 
   @override
@@ -41,7 +44,7 @@ class CategoryAdapter extends TypeAdapter<Category> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is CategoryAdapter &&
+      other is ProductAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
