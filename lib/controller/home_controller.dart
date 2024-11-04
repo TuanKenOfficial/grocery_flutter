@@ -67,6 +67,7 @@ class HomeController extends GetxController{
             popularCategories: popularCategoryListFromJson(result.body));
       }
     } finally {
+      print('Danh mục');
       print(popularCategoryList.length);//số lượng danh mục
       isPopularCategoryLoading(false);
     }
@@ -86,6 +87,7 @@ class HomeController extends GetxController{
             popularProducts: popularProductListFromJson(result.body));
       }
     } finally {
+      print('Sản phẩm trang home');
       print(popularProductList.length); //số lượng sản phẩm
       isPopularProductLoading(false);
     }
