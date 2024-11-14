@@ -16,10 +16,24 @@ class ProductScreen extends StatelessWidget {
         children: [
           const MainHeader(),
           Expanded(child: Obx(() {
-            if (productController.productList.isNotEmpty) {
-              return ProductGrid(products: productController.productList);
+            if (productController.isProductLoading.value) {
+              print('1');
+              return const ProductLoadingGrid();
             } else {
-              return ProductLoadingGrid();
+              if (productController.productList.isNotEmpty) {
+                print('2');
+                return ProductGrid(products: productController.productList);
+              } else {
+                return Column(
+                  children: [
+                    Image.asset('assets/product_not_found.jpg'),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text('Không có sản phẩm'),
+                  ],
+                );
+              }
             }
           }))
         ],

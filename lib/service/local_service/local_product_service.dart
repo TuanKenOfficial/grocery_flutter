@@ -9,7 +9,8 @@ class LocalProductService {
     _popularProductBox = await Hive.openBox<Product>('PopularProducts');
   }
 
-  Future<void> assignAllPopularProducts({required List<Product> popularProducts}) async {
+  Future<void> assignAllPopularProducts(
+      {required List<Product> popularProducts}) async {
     await _popularProductBox.clear();
     await _popularProductBox.addAll(popularProducts);
   }

@@ -20,7 +20,7 @@ class ProductController extends GetxController {
     try {
       isProductLoading(true);
       var result = await RemoteProductService().get();
-      if(result != null) {
+      if (result != null) {
         productList.assignAll(productListFromJson(result.body));
       }
     } finally {
@@ -30,29 +30,33 @@ class ProductController extends GetxController {
     }
   }
 
-  // void getProductByName({required String keyword}) async {
-  //   try {
-  //     isProductLoading(true);
-  //     var result = await RemoteProductService().getByName(keyword: keyword);
-  //     if(result != null){
-  //       productList.assignAll(productListFromJson(result.body));
-  //     }
-  //   } finally {
-  //     isProductLoading(false);
-  //     print(productList.length);
-  //   }
-  // }
-  //
-  // void getProductByCategory({required int id}) async {
-  //   try {
-  //     isProductLoading(true);
-  //     var result = await RemoteProductService().getByCategory(id: id);
-  //     if(result != null){
-  //       productList.assignAll(productListFromJson(result.body));
-  //     }
-  //   } finally {
-  //     isProductLoading(false);
-  //     print(productList.length);
-  //   }
-  // }
+  // get name
+  //liên quan đến file remote_product.dart
+  void getProductByName({required String keyword}) async {
+    try {
+      isProductLoading(true);
+      var result = await RemoteProductService().getByName(keyword: keyword);
+      if (result != null) {
+        productList.assignAll(productListFromJson(result.body));
+      }
+    } finally {
+      isProductLoading(false);
+      print(productList.length);
+    }
+  }
+
+  //liên quan đến file remote_product.dart
+  //get product by category
+  void getProductByCategory({required int id}) async {
+    try {
+      isProductLoading(true);
+      var result = await RemoteProductService().getByCategory(id: id);
+      if (result != null) {
+        productList.assignAll(productListFromJson(result.body));
+      }
+    } finally {
+      isProductLoading(false);
+      print(productList.length);
+    }
+  }
 }

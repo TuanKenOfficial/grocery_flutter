@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/dashboard_controller.dart';
+import 'package:my_grocery/view/account/account_screen.dart';
+import 'package:my_grocery/view/category/category_screen.dart';
 import 'package:my_grocery/view/home/home_screens.dart';
 import 'package:my_grocery/view/product/product_screen.dart';
 
@@ -19,6 +21,8 @@ class DashboardScreen extends StatelessWidget {
             children: [
               HomeScreen(),
               ProductScreen(),
+              CategoryScreen(),
+              AccountScreen(),
               Container(
                 color: Colors.red,
               ),
@@ -51,8 +55,7 @@ class DashboardScreen extends StatelessWidget {
               controller.updateIndex(val);
             },
             items: const [
-              BottomNavigationBarItem(
-                  icon: Icon(Icons.home), label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
               BottomNavigationBarItem(
                   icon: Icon(Icons.category), label: 'Category'),
               BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
