@@ -50,14 +50,23 @@ class _CategoryCardState extends State<CategoryCard> {
                     Align(
                       alignment: const Alignment(-1, 0),
                       child: Container(
-                        margin: EdgeInsets.only(
-                            left: 10, right: 10, top: 10, bottom: 10),
-                        child: Text(
-                          widget.category.name,
-                          style: const TextStyle(
-                              fontSize: 20,
-                              color: Colors.red,
-                              fontWeight: FontWeight.bold),
+                        margin: EdgeInsets.all(5),
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.white.withOpacity(0.6),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(24))),
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 20, vertical: 8),
+                            child: Text(
+                              widget.category.name,
+                              style: const TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -73,15 +82,16 @@ class _CategoryCardState extends State<CategoryCard> {
                       },
                       child: Container(
                         decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.6),
+                            color: Colors.red.withOpacity(0.6),
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(24))),
                         child: const Padding(
                           padding:
-                              EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                              EdgeInsets.symmetric(horizontal: 20, vertical: 8),
                           child: Text(
-                            'View more',
+                            'Xem thêm',
                             style: TextStyle(
+                                fontSize: 20,
                                 color: Colors.black54,
                                 fontWeight: FontWeight.bold),
                           ),

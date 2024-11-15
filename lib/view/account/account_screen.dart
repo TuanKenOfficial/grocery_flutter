@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_grocery/controller/controllers.dart';
+import 'package:my_grocery/view/account/profile_screen.dart';
 
 import 'auth/sign_in_screen.dart';
 
@@ -42,19 +43,20 @@ class AccountScreen extends StatelessWidget {
           ),
           const SizedBox(height: 50),
           buildAccountCard(
-              title: "Profile Info",
+              title: "Thông tin hồ sơ",
               onClick: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const SignInScreen()));
+                        builder: (context) => const ProfileScreen()));
               }),
-          buildAccountCard(title: "Notification", onClick: () {}),
-          buildAccountCard(title: "Settings", onClick: () {}),
-          buildAccountCard(title: "About Us", onClick: () {}),
-          buildAccountCard(title: "Terms of Service", onClick: () {}),
+          buildAccountCard(title: "Thông báo", onClick: () {}),
+          buildAccountCard(title: "Cài đặt", onClick: () {}),
+          buildAccountCard(title: "Giới thiệu về chúng tôi", onClick: () {}),
+          buildAccountCard(title: "Điều khoản dịch vụ", onClick: () {}),
           Obx(() => buildAccountCard(
-              title: authController.user.value == null ? "Sign In" : "Sign Out",
+              title:
+                  authController.user.value == null ? "Đăng nhập" : "Đăng xuất",
               onClick: () {
                 if (authController.user.value != null) {
                   authController.signOut();

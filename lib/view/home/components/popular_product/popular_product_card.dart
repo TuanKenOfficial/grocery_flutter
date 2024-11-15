@@ -5,8 +5,6 @@ import 'package:my_grocery/const.dart';
 import 'package:my_grocery/model/product.dart';
 import 'package:shimmer/shimmer.dart';
 
-
-
 class PopularProductCard extends StatelessWidget {
   final Product product;
   const PopularProductCard({Key? key, required this.product}) : super(key: key);
@@ -27,16 +25,14 @@ class PopularProductCard extends StatelessWidget {
               AspectRatio(
                 aspectRatio: 0.9,
                 child: CachedNetworkImage(
-                  imageUrl: baseUrl+product.images.first,
+                  imageUrl: baseUrl + product.images.first,
                   placeholder: (context, url) => Shimmer.fromColors(
                     highlightColor: Colors.white,
                     baseColor: Colors.grey.shade300,
                     child: Container(
                       color: Colors.grey,
                       padding: const EdgeInsets.all(15),
-                      margin: const EdgeInsets.symmetric(
-                        horizontal: 25
-                      ),
+                      margin: const EdgeInsets.symmetric(horizontal: 25),
                     ),
                   ),
                   errorWidget: (context, url, error) => const Center(
@@ -53,9 +49,9 @@ class PopularProductCard extends StatelessWidget {
                 child: Text(
                   product.name,
                   style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 14
-                  ),
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
                   maxLines: 1,
                 ),
               )
