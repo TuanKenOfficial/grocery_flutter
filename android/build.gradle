@@ -12,6 +12,11 @@ subprojects {
 subprojects {
     project.evaluationDependsOn(':app')
 }
+tasks.withType(JavaCompile).configureEach {
+    javaCompiler = javaToolchains.compilerFor {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
 
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
